@@ -25,8 +25,8 @@ void addNode(node_type* root, int val){
 	temp -> val = val;
 	temp -> right = NULL;
 	temp -> left = NULL;
-	node_type* prev  = root;
-	node_type* curr;
+	node_type* prev;
+	node_type* curr = root;
 	while(curr != NULL){
 		prev = curr;
 		if(curr -> val > val){
@@ -43,11 +43,19 @@ void addNode(node_type* root, int val){
 		prev -> right = temp;
 	}
 }
+void printTree(node_type *node){
+	if(node != NULL){
+		printf("%d\n", node -> val);
+		printTree(node -> left);
+		printTree(node -> right);
+	}
+}
 int main(){
 	node_type* root = initRoot(0);
 	int i;
-	for(i = 0; i < 5; i++){
+	for(i = 1; i <= 4; i++){
 		addNode(root, i);
 	}
+	printTree(root);
 	return 0;
 }
