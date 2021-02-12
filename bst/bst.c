@@ -25,19 +25,29 @@ void addNode(node_type* root, int val){
 	temp -> val = val;
 	temp -> right = NULL;
 	temp -> left = NULL;
-	node_type* curr = root;
-
-	while(1){
-		if(curr -> left -> val < val){
+	node_type* prev  = root;
+	node_type* curr;
+	while(curr != NULL){
+		prev = curr;
+		if(curr -> val > val){
 			curr = curr -> left;
 		}
 		else{
 			curr = curr -> right;
 		}
 	}
+	if(prev -> val > val){
+		prev -> left = temp;
+	}
+	else{
+		prev -> right = temp;
+	}
 }
 int main(){
 	node_type* root = initRoot(0);
-	printRoot(root);
+	int i;
+	for(i = 0; i < 5; i++){
+		addNode(root, i);
+	}
+	return 0;
 }
-//	Update test
