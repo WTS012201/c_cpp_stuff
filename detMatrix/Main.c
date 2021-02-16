@@ -18,5 +18,5 @@ int main(){
 		}
 	}
 	
-	printf("\ndetA = %.2f\n", det(matrix, n));
+	printf("\ntr(A) = %.2f\n", tr(matrix, n));
 }
