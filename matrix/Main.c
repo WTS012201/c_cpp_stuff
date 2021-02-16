@@ -18,5 +18,5 @@ int main(){
 		}
 	}
 	
-	printf("\ntr(A) = %.2f\n", tr(matrix, n));
+	printMatrix(matrix, n, n);
 }
